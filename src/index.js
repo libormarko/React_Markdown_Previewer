@@ -4,13 +4,12 @@ import marked from "marked";
 
 import "./styles.css";
 
-// ALLOWS LINE BREAKS WITH RETURN BUTTON
+// Allows line breaks with the return button
 marked.setOptions({
   breaks: true
 });
 
-// Set a function to be used by the marked Renderer, the bit that takes markdown and translates it to html, and create a callback for links to return the link in a diffrent format then the default., the callback gets called with the href, title and text for that link.
-// / INSERTS target="_blank" INTO HREF TAGS (required for codepen links)
+// Set a function to be used by the marked Renderer, the bit that takes markdown and translates it to html, and create a callback for links to return the link in a diffrent format then the default.
 const renderer = new marked.Renderer();
 
 class App extends React.Component {
@@ -32,14 +31,14 @@ class App extends React.Component {
         <h1 className="title">React Markdown Previewer</h1>
         <div className="AppWrap">
           <div className="EditorWrap">
-            <Toolbar onClick={this.handleEditorMaximize} text="Editor" />
+            <Toolbar text="Editor" />
             <Editor
               markdown={this.state.markdown}
               onChange={this.handleChange}
             />
           </div>
           <div className="PreviewerWrap">
-            <Toolbar onClick={this.handlePreviewerMaximize} text="Previewer" />
+            <Toolbar text="Previewer" />
             <Previewer markdown={this.state.markdown} />
           </div>
         </div>
@@ -52,7 +51,6 @@ const Toolbar = props => {
   return (
     <div className="toolbar">
       {props.text}
-      <i onClick={props.onClick} />
     </div>
   );
 };
