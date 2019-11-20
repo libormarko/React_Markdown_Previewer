@@ -10,3 +10,6 @@ A front-end web development project in ReactJS. I wrote a blog post about the pr
 ## Setup and Run
 
 Try the app [here](https://t7sle.codesandbox.io/).
+
+## Screenshot of the App
+![Screenshot of the App](./screenshot.png)
